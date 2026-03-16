@@ -1118,6 +1118,187 @@ textarea {
   opacity: var(--o);
   animation: float 10s ease-in-out infinite alternate;
 }
+/* Profile Card (replaces How I Work) */
+.profile-card {
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 50px rgba(20, 184, 166, 0.2);
+}
+
+/* Image */
+.profile-image-wrapper {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--accent);
+  box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
+}
+
+.profile-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bio */
+.profile-bio {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+}
+/* =========================
+   PROFILE ADVANCED EFFECTS
+========================= */
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.profile-card {
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  box-shadow: var(--shadow-soft);
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(20, 184, 166, 0.25);
+}
+
+/* Profile Image */
+.profile-image-wrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Image */
+.profile-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Animated Glow Ring */
+.glow-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #14b8a6,
+    #0ea5e9,
+    #8b5cf6,
+    #14b8a6
+  );
+  animation: spin 4s linear infinite;
+  z-index: 1;
+  filter: blur(6px);
+}
+
+/* Inner mask to keep ring only */
+.profile-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: var(--card);
+  border-radius: 50%;
+  z-index: 1;
+}
+/* CV Button */
+.cv-button {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 999px;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #14b8a6, #0ea5e9);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.cv-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.6);
+}
+
+/* Click effect */
+.cv-button:active {
+  transform: scale(0.95);
+}
+/* Spin animation */
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Bio */
+.profile-bio {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+}
+
+/* Social Icons */
+.profile-socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.profile-socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-foreground);
+  transition: all 0.25s ease;
+}
+
+.profile-socials a svg {
+  width: 18px;
+  height: 18px;
+}
+
+.profile-socials a:hover {
+  transform: translateY(-3px) scale(1.1);
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.3);
+}
 
 @keyframes float {
   from { transform: translateY(0px); }
