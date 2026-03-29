@@ -301,6 +301,7 @@ main {
 
 .tech-apps {
   padding-top: 64px;
+  overflow: clip;
 }
 
 .tech-app-grid {
@@ -324,6 +325,395 @@ main {
   transform: translateY(-6px);
   border-color: var(--accent);
   box-shadow: 0 16px 40px rgba(20, 184, 166, 0.2);
+}
+
+.skills-intro {
+  max-width: 56ch;
+  margin-bottom: 0;
+}
+
+.skills-orbit-scene {
+  --globe-size: 22rem;
+  --orbit-card-width: 11.5rem;
+  --orbit-duration: 46s;
+  --orbit-inner-size: 41rem;
+  --orbit-outer-size: 48rem;
+  position: relative;
+  isolation: isolate;
+  min-height: 58rem;
+  margin-top: 2.75rem;
+}
+
+.skills-orbit-scene::before,
+.skills-orbit-scene::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+  background: conic-gradient(
+      from 0deg,
+      rgba(20, 184, 166, 0.04) 0deg,
+      rgba(20, 184, 166, 0.32) 36deg,
+      rgba(232, 246, 255, 0.18) 72deg,
+      rgba(20, 184, 166, 0.06) 112deg,
+      rgba(20, 184, 166, 0) 160deg,
+      rgba(20, 184, 166, 0.24) 214deg,
+      rgba(232, 246, 255, 0.14) 258deg,
+      rgba(20, 184, 166, 0.05) 308deg,
+      rgba(20, 184, 166, 0.3) 342deg,
+      rgba(20, 184, 166, 0.04) 360deg);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+  animation: orbitTrackSpin var(--orbit-duration) linear infinite;
+}
+
+.skills-orbit-scene::before {
+  width: var(--orbit-inner-size);
+  height: var(--orbit-inner-size);
+  filter: drop-shadow(0 0 12px rgba(20, 184, 166, 0.16));
+}
+
+.skills-orbit-scene::after {
+  width: var(--orbit-outer-size);
+  height: var(--orbit-outer-size);
+  opacity: 0.55;
+  filter: drop-shadow(0 0 14px rgba(20, 184, 166, 0.12));
+}
+
+.skills-globe-anchor {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--globe-size);
+  height: var(--globe-size);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.skills-card-orbit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  animation: orbitTrackSpin var(--orbit-duration) linear infinite;
+}
+
+.skills-globe-halo {
+  position: absolute;
+  inset: -18%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--accent) 26%, transparent), transparent 60%);
+  filter: blur(26px);
+  opacity: 0.9;
+  animation: globePulse 6s ease-in-out infinite;
+}
+
+.skills-globe-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--border));
+  pointer-events: none;
+}
+
+.skills-globe-ring-one {
+  inset: -10%;
+  animation: globeSpinSlow 18s linear infinite;
+}
+
+.skills-globe-ring-two {
+  inset: -18%;
+  border-style: dashed;
+  opacity: 0.55;
+  animation: globeSpinSlow 26s linear infinite reverse;
+}
+
+.skills-globe {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--border));
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.22), transparent 24%),
+    radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 28%),
+    color-mix(in srgb, var(--card) 84%, transparent);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.32),
+    inset 0 0 80px rgba(12, 18, 32, 0.26);
+  backdrop-filter: blur(18px);
+}
+
+.skills-globe::before {
+  content: '';
+  position: absolute;
+  inset: 0.75rem;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--foreground) 18%, transparent);
+  pointer-events: none;
+}
+
+.skills-globe::after {
+  content: '';
+  position: absolute;
+  inset: auto 8% 6%;
+  height: 18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(5, 8, 20, 0.4), transparent 72%);
+  filter: blur(16px);
+  pointer-events: none;
+}
+
+.skills-globe-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.globe-surface-track {
+  will-change: transform;
+}
+
+.globe-grid-group {
+  opacity: 0.9;
+}
+
+.globe-map {
+  opacity: 0.98;
+}
+
+.globe-clouds {
+  opacity: 0.8;
+  animation: globeCloudPulse 7s ease-in-out infinite alternate;
+}
+
+.globe-outline {
+  fill: none;
+  stroke: color-mix(in srgb, var(--foreground) 34%, transparent);
+  stroke-width: 2.5;
+}
+
+.skills-globe-copy {
+  position: relative;
+  z-index: 2;
+  width: min(76%, 14rem);
+  text-align: center;
+  padding: 1rem 1.1rem;
+  border-radius: 1.25rem;
+  background: color-mix(in srgb, var(--background) 54%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border));
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(16px);
+}
+
+.skills-globe-copy p {
+  margin: 0 0 0.4rem;
+  color: var(--accent);
+  letter-spacing: 0.16em;
+}
+
+.skills-globe-copy h3 {
+  margin: 0;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+}
+
+.skills-globe-copy span {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--muted-foreground);
+  font-size: 0.84rem;
+}
+
+.skills-orbit-node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%) rotate(var(--angle));
+  z-index: 1;
+  scroll-margin-top: 120px;
+}
+
+.orbit-arm {
+  position: absolute;
+  left: calc((var(--globe-size) / 2) - 0.35rem);
+  top: 0;
+  width: calc(var(--radius) - (var(--globe-size) / 2) - 1.2rem);
+  height: 2px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg,
+      color-mix(in srgb, var(--accent) 76%, transparent),
+      color-mix(in srgb, var(--foreground) 16%, transparent));
+  box-shadow: 0 0 14px rgba(20, 184, 166, 0.18);
+  opacity: 0.72;
+  transform-origin: left center;
+  transition: opacity 0.28s ease, box-shadow 0.28s ease;
+}
+
+.orbit-arm::before,
+.orbit-arm::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: color-mix(in srgb, var(--card) 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 60%, var(--border));
+  box-shadow: 0 0 16px rgba(20, 184, 166, 0.16);
+}
+
+.orbit-arm::before {
+  left: -0.2rem;
+}
+
+.orbit-arm::after {
+  right: -0.2rem;
+}
+
+.suspended-tech-card {
+  position: absolute;
+  left: calc(var(--radius) + 0.7rem);
+  top: 0;
+  width: var(--orbit-card-width);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.95rem 1rem;
+  border-radius: 1.15rem;
+  background: color-mix(in srgb, var(--card) 84%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(18px);
+  transform: translate(-50%, -50%) rotate(calc(var(--angle) * -1));
+  animation: orbitCardCounter var(--orbit-duration) linear infinite;
+  animation-delay: var(--orbit-offset, 0s);
+  transition: box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease, filter 0.28s ease;
+}
+
+.tech-card-icon {
+  flex: 0 0 2.8rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.9rem;
+  background: linear-gradient(180deg,
+      color-mix(in srgb, var(--secondary) 88%, transparent),
+      color-mix(in srgb, var(--background) 82%, transparent));
+  border: 1px solid color-mix(in srgb, var(--border) 76%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.tech-card-icon img {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.tech-card-copy h3 {
+  margin: 0 0 0.28rem;
+  font-size: 0.98rem;
+}
+
+.tech-card-copy .small-text {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.skills-orbit-node:hover,
+.skills-orbit-node:target {
+  z-index: 5;
+}
+
+.skills-card-orbit:hover,
+.skills-card-orbit:hover .suspended-tech-card,
+.skills-orbit-node:target .suspended-tech-card {
+  animation-play-state: paused;
+}
+
+.skills-orbit-node:hover .orbit-arm,
+.skills-orbit-node:target .orbit-arm {
+  opacity: 1;
+  box-shadow: 0 0 22px rgba(20, 184, 166, 0.3);
+}
+
+.skills-orbit-node:hover .suspended-tech-card,
+.skills-orbit-node:target .suspended-tech-card {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.04);
+}
+
+.skills-orbit-node:hover .tech-card-icon,
+.skills-orbit-node:target .tech-card-icon {
+  border-color: color-mix(in srgb, var(--accent) 70%, var(--border));
+  box-shadow: 0 10px 24px rgba(20, 184, 166, 0.16);
+}
+
+@keyframes globePulse {
+  0%, 100% {
+    transform: scale(0.96);
+    opacity: 0.72;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes globeSpinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes globeCloudPulse {
+  0% {
+    opacity: 0.45;
+  }
+  100% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes orbitCardCounter {
+  from {
+    transform: translate(-50%, -50%) rotate(calc(var(--angle) * -1));
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(calc((var(--angle) * -1) - 1turn));
+  }
+}
+
+@keyframes orbitTrackSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0turn);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+@keyframes orbitNodeFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-8px);
+  }
 }
 
 .page .invert-on-dark {
@@ -1461,6 +1851,61 @@ textarea {
   .hero {
     padding-top: 48px;
   }
+
+  .skills-orbit-scene {
+    --globe-size: 17rem;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .skills-orbit-scene::before,
+  .skills-orbit-scene::after {
+    content: none;
+  }
+
+  .skills-globe-anchor {
+    position: relative;
+    left: auto;
+    top: auto;
+    grid-column: 1 / -1;
+    margin: 0 auto 1rem;
+    transform: none;
+  }
+
+  .skills-card-orbit {
+    position: static;
+    display: contents;
+    animation: none;
+  }
+
+  .skills-orbit-node {
+    position: static;
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+
+  .orbit-arm {
+    display: none;
+  }
+
+  .suspended-tech-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    min-height: 100%;
+    transform: none;
+    animation: none;
+  }
+
+  .skills-orbit-node:hover .suspended-tech-card,
+  .skills-orbit-node:target .suspended-tech-card {
+    transform: translateY(-8px) scale(1.02);
+  }
 }
 
 @media (max-width: 640px) {
@@ -1485,5 +1930,30 @@ textarea {
 
   .tech-grid {
     gap: 12px;
+  }
+
+  .skills-orbit-scene {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-globe-anchor {
+    width: min(100%, 15.5rem);
+    height: min(100%, 15.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-orbit-scene::before,
+  .skills-orbit-scene::after,
+  .skills-card-orbit,
+  .skills-globe-halo,
+  .skills-globe-ring-one,
+  .skills-globe-ring-two,
+  .globe-grid-group,
+  .globe-map,
+  .globe-clouds,
+  .skills-orbit-node,
+  .suspended-tech-card {
+    animation: none;
   }
 }
