@@ -344,47 +344,6 @@ main {
   margin-top: 2.75rem;
 }
 
-.skills-orbit-scene::before,
-.skills-orbit-scene::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.8;
-  background: conic-gradient(
-      from 0deg,
-      rgba(20, 184, 166, 0.04) 0deg,
-      rgba(20, 184, 166, 0.32) 36deg,
-      rgba(232, 246, 255, 0.18) 72deg,
-      rgba(20, 184, 166, 0.06) 112deg,
-      rgba(20, 184, 166, 0) 160deg,
-      rgba(20, 184, 166, 0.24) 214deg,
-      rgba(232, 246, 255, 0.14) 258deg,
-      rgba(20, 184, 166, 0.05) 308deg,
-      rgba(20, 184, 166, 0.3) 342deg,
-      rgba(20, 184, 166, 0.04) 360deg);
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
-  animation: orbitTrackSpin var(--orbit-duration) linear infinite;
-}
-
-.skills-orbit-scene::before {
-  width: var(--orbit-inner-size);
-  height: var(--orbit-inner-size);
-  filter: drop-shadow(0 0 12px rgba(20, 184, 166, 0.16));
-}
-
-.skills-orbit-scene::after {
-  width: var(--orbit-outer-size);
-  height: var(--orbit-outer-size);
-  opacity: 0.55;
-  filter: drop-shadow(0 0 14px rgba(20, 184, 166, 0.12));
-}
-
 .skills-globe-anchor {
   position: absolute;
   left: 50%;
@@ -397,9 +356,67 @@ main {
 
 .skills-card-orbit {
   position: absolute;
-  inset: 0;
+  left: 50%;
+  top: 50%;
+  width: var(--orbit-outer-size);
+  height: var(--orbit-outer-size);
+  transform: translate(-50%, -50%);
   z-index: 1;
   animation: orbitTrackSpin var(--orbit-duration) linear infinite;
+}
+
+.skills-card-orbit::before,
+.skills-card-orbit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.skills-card-orbit::before {
+  background: conic-gradient(
+      from 0deg,
+      rgba(20, 184, 166, 0.03) 0deg,
+      rgba(20, 184, 166, 0.34) 32deg,
+      rgba(232, 246, 255, 0.16) 58deg,
+      rgba(20, 184, 166, 0.06) 96deg,
+      rgba(20, 184, 166, 0) 150deg,
+      rgba(20, 184, 166, 0.2) 212deg,
+      rgba(232, 246, 255, 0.14) 246deg,
+      rgba(20, 184, 166, 0.06) 300deg,
+      rgba(20, 184, 166, 0.28) 338deg,
+      rgba(20, 184, 166, 0.03) 360deg);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+  filter: drop-shadow(0 0 16px rgba(20, 184, 166, 0.16));
+  opacity: 0.72;
+}
+
+.skills-card-orbit::after {
+  inset: 3.5rem;
+  background:
+    radial-gradient(circle at center,
+      transparent calc(100% - 2px),
+      color-mix(in srgb, var(--accent) 52%, transparent) calc(100% - 1px),
+      transparent 100%),
+    conic-gradient(
+      from 0deg,
+      rgba(20, 184, 166, 0.18) 0deg 10deg,
+      transparent 10deg 44deg,
+      rgba(20, 184, 166, 0.14) 44deg 52deg,
+      transparent 52deg 108deg,
+      rgba(20, 184, 166, 0.16) 108deg 118deg,
+      transparent 118deg 172deg,
+      rgba(20, 184, 166, 0.18) 172deg 182deg,
+      transparent 182deg 236deg,
+      rgba(20, 184, 166, 0.16) 236deg 246deg,
+      transparent 246deg 298deg,
+      rgba(20, 184, 166, 0.18) 298deg 308deg,
+      transparent 308deg 360deg);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+  opacity: 0.75;
 }
 
 .skills-globe-halo {
@@ -546,18 +563,22 @@ main {
 
 .orbit-arm {
   position: absolute;
-  left: calc((var(--globe-size) / 2) - 0.35rem);
+  left: calc((var(--globe-size) / 2) + 0.1rem);
   top: 0;
-  width: calc(var(--radius) - (var(--globe-size) / 2) - 1.2rem);
-  height: 2px;
+  width: calc(var(--radius) - (var(--globe-size) / 2) + 1.2rem);
+  height: 3px;
   transform: translateY(-50%);
   background: linear-gradient(90deg,
-      color-mix(in srgb, var(--accent) 76%, transparent),
-      color-mix(in srgb, var(--foreground) 16%, transparent));
-  box-shadow: 0 0 14px rgba(20, 184, 166, 0.18);
-  opacity: 0.72;
+      color-mix(in srgb, var(--accent) 26%, transparent) 0%,
+      color-mix(in srgb, var(--accent) 92%, transparent) 28%,
+      color-mix(in srgb, var(--accent) 78%, transparent) 78%,
+      color-mix(in srgb, var(--foreground) 18%, transparent) 100%);
+  box-shadow:
+    0 0 16px rgba(20, 184, 166, 0.24),
+    0 0 2px rgba(232, 246, 255, 0.35);
+  opacity: 0.88;
   transform-origin: left center;
-  transition: opacity 0.28s ease, box-shadow 0.28s ease;
+  transition: opacity 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
 }
 
 .orbit-arm::before,
@@ -570,21 +591,21 @@ main {
   border-radius: 50%;
   transform: translateY(-50%);
   background: color-mix(in srgb, var(--card) 88%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 60%, var(--border));
-  box-shadow: 0 0 16px rgba(20, 184, 166, 0.16);
+  border: 1px solid color-mix(in srgb, var(--accent) 70%, var(--border));
+  box-shadow: 0 0 16px rgba(20, 184, 166, 0.26);
 }
 
 .orbit-arm::before {
-  left: -0.2rem;
+  left: -0.1rem;
 }
 
 .orbit-arm::after {
-  right: -0.2rem;
+  right: -0.1rem;
 }
 
 .suspended-tech-card {
   position: absolute;
-  left: calc(var(--radius) + 0.7rem);
+  left: calc(var(--radius) + 1.6rem);
   top: 0;
   width: var(--orbit-card-width);
   display: flex;
@@ -646,7 +667,10 @@ main {
 .skills-orbit-node:hover .orbit-arm,
 .skills-orbit-node:target .orbit-arm {
   opacity: 1;
-  box-shadow: 0 0 22px rgba(20, 184, 166, 0.3);
+  box-shadow:
+    0 0 24px rgba(20, 184, 166, 0.34),
+    0 0 4px rgba(232, 246, 255, 0.42);
+  filter: brightness(1.08);
 }
 
 .skills-orbit-node:hover .suspended-tech-card,
@@ -1861,11 +1885,6 @@ textarea {
     align-items: start;
   }
 
-  .skills-orbit-scene::before,
-  .skills-orbit-scene::after {
-    content: none;
-  }
-
   .skills-globe-anchor {
     position: relative;
     left: auto;
@@ -1878,6 +1897,7 @@ textarea {
   .skills-card-orbit {
     position: static;
     display: contents;
+    transform: none;
     animation: none;
   }
 
@@ -1943,8 +1963,6 @@ textarea {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .skills-orbit-scene::before,
-  .skills-orbit-scene::after,
   .skills-card-orbit,
   .skills-globe-halo,
   .skills-globe-ring-one,
