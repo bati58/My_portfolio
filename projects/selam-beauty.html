@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selam Beauty Salon | Bati</title>
+  <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <input type="checkbox" id="theme-toggle" class="visually-hidden" aria-label="Toggle light mode">
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <symbol id="icon-moon" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5" />
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+  <div class="page project-detail" style="--detail-bg: url('../public/selam-beauty/cover.png');">
+    <div class="dot-background" aria-hidden="true">
+      <div class="dot-grid"></div>
+      <div class="floating-dots">
+        <span style="--x:8;--y:20;--s:7;--o:0.45;"></span>
+        <span style="--x:22;--y:35;--s:5;--o:0.35;"></span>
+        <span style="--x:40;--y:18;--s:6;--o:0.4;"></span>
+        <span style="--x:58;--y:28;--s:8;--o:0.5;"></span>
+        <span style="--x:72;--y:22;--s:5;--o:0.4;"></span>
+        <span style="--x:86;--y:15;--s:6;--o:0.45;"></span>
+        <span style="--x:12;--y:60;--s:6;--o:0.35;"></span>
+        <span style="--x:28;--y:70;--s:7;--o:0.4;"></span>
+        <span style="--x:48;--y:62;--s:5;--o:0.4;"></span>
+        <span style="--x:64;--y:68;--s:9;--o:0.5;"></span>
+        <span style="--x:80;--y:60;--s:6;--o:0.45;"></span>
+        <span style="--x:20;--y:85;--s:8;--o:0.35;"></span>
+        <span style="--x:44;--y:86;--s:6;--o:0.4;"></span>
+        <span style="--x:68;--y:86;--s:5;--o:0.35;"></span>
+        <span style="--x:88;--y:80;--s:7;--o:0.45;"></span>
+      </div>
+    </div>
+    <header class="navbar">
+      <div class="nav-inner">
+        <a class="logo" href="../index.html#designs"><span>&larr; Back</span></a>
+        <label for="theme-toggle" class="icon-button theme-toggle" aria-label="Toggle theme">
+          <svg class="icon sun"><use href="#icon-sun"></use></svg>
+          <svg class="icon moon"><use href="#icon-moon"></use></svg>
+        </label>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <article class="detail-shell">
+          <span class="eyebrow"><span class="line"></span>Design Detail</span>
+          <h1 class="headline">Selam Beauty Salon</h1>
+          <p class="body-text">A salon mobile app UI/UX concept designed for onboarding, easy sign-in, friendly service browsing, stylist selection, and appointment booking with a warm, beauty-first visual tone.</p>
+          <div class="detail-gallery">
+            <div class="image-card">
+              <img src="../public/selam-beauty/welcome-screen.png" alt="Selam Beauty Salon welcome screen">
+              <div class="image-caption">
+                <h4>Welcome screen</h4>
+                <p>Opening visual that sets the salon mood before users move into discovery and booking.</p>
+              </div>
+            </div>
+            <div class="image-card">
+              <img src="../public/selam-beauty/home.png" alt="Selam Beauty Salon home screen">
+              <div class="image-caption">
+                <h4>Home dashboard</h4>
+                <p>Personalized landing screen with a main booking CTA, service shortcuts, and featured stylists.</p>
+              </div>
+            </div>
+            <div class="image-card">
+              <img src="../public/selam-beauty/login.png" alt="Selam Beauty Salon sign-in screen">
+              <div class="image-caption">
+                <h4>Sign in</h4>
+                <p>Simple login flow with clear fields, remember-me support, and alternate Google sign-in.</p>
+              </div>
+            </div>
+            <div class="image-card">
+              <img src="../public/selam-beauty/hair-services.png" alt="Selam Beauty Salon hair services screen">
+              <div class="image-caption">
+                <h4>Hair services</h4>
+                <p>Category-based service browsing with pricing and duration shown before booking.</p>
+              </div>
+            </div>
+            <div class="image-card">
+              <img src="../public/selam-beauty/facial-services.png" alt="Selam Beauty Salon facial services screen">
+              <div class="image-caption">
+                <h4>Facial category</h4>
+                <p>Service cards focused on visual appeal while keeping selection and pricing easy to scan.</p>
+              </div>
+            </div>
+            <div class="image-card">
+              <img src="../public/selam-beauty/stylists-list.png" alt="Selam Beauty Salon stylist selection screen">
+              <div class="image-caption">
+                <h4>Stylist selection</h4>
+                <p>Board-certified stylist list with images, roles, ratings, and years of experience.</p>
+              </div>
+            </div>
+            <div class="image-card">
+              <img src="../public/selam-beauty/stylists-selected.png" alt="Selam Beauty Salon selected stylist screen">
+              <div class="image-caption">
+                <h4>Booking progress</h4>
+                <p>Multi-step appointment flow that clearly shows service, stylist, and scheduling progress.</p>
+              </div>
+            </div>
+            <div class="image-card">
+              <img src="../public/selam-beauty/profile.png" alt="Selam Beauty Salon profile screen">
+              <div class="image-caption">
+                <h4>Profile management</h4>
+                <p>Clean account overview for personal info, service history, payments, preferences, and logout.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pill-row">
+            <span class="pill">UI/UX</span>
+            <span class="pill">Figma</span>
+            <span class="pill">Mobile App</span>
+            <span class="pill">Appointment Flow</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Designed for fast service discovery and low-friction booking.</li>
+            <li>Balances soft salon branding with clear task-focused mobile navigation.</li>
+            <li>Covers authentication, home, categories, stylist selection, and profile screens.</li>
+          </ul>
+        </article>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
