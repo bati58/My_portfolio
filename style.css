@@ -335,12 +335,13 @@ main {
 .skills-orbit-scene {
   --globe-size: 22rem;
   --orbit-card-width: 11.5rem;
-  --orbit-duration: 46s;
-  --orbit-inner-size: 41rem;
-  --orbit-outer-size: 48rem;
+  --orbit-duration: 74s;
+  --orbit-track-size: 58rem;
+  --orbit-ring-size: 42rem;
+  --orbit-radius: calc(var(--orbit-ring-size) / 2);
   position: relative;
   isolation: isolate;
-  min-height: 58rem;
+  min-height: 60rem;
   margin-top: 2.75rem;
 }
 
@@ -358,8 +359,8 @@ main {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: var(--orbit-outer-size);
-  height: var(--orbit-outer-size);
+  width: var(--orbit-track-size);
+  height: var(--orbit-track-size);
   transform: translate(-50%, -50%);
   z-index: 1;
   animation: orbitTrackSpin var(--orbit-duration) linear infinite;
@@ -369,54 +370,39 @@ main {
 .skills-card-orbit::after {
   content: '';
   position: absolute;
-  inset: 0;
+  left: 50%;
+  top: 50%;
   border-radius: 50%;
   pointer-events: none;
+  transform: translate(-50%, -50%);
 }
 
 .skills-card-orbit::before {
-  background: conic-gradient(
+  width: var(--orbit-ring-size);
+  height: var(--orbit-ring-size);
+  background:
+    conic-gradient(
       from 0deg,
-      rgba(20, 184, 166, 0.03) 0deg,
-      rgba(20, 184, 166, 0.34) 32deg,
-      rgba(232, 246, 255, 0.16) 58deg,
-      rgba(20, 184, 166, 0.06) 96deg,
-      rgba(20, 184, 166, 0) 150deg,
-      rgba(20, 184, 166, 0.2) 212deg,
-      rgba(232, 246, 255, 0.14) 246deg,
-      rgba(20, 184, 166, 0.06) 300deg,
-      rgba(20, 184, 166, 0.28) 338deg,
-      rgba(20, 184, 166, 0.03) 360deg);
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
-  filter: drop-shadow(0 0 16px rgba(20, 184, 166, 0.16));
-  opacity: 0.72;
+      rgba(20, 184, 166, 0.16) 0deg,
+      rgba(20, 184, 166, 0.42) 72deg,
+      rgba(232, 246, 255, 0.14) 118deg,
+      rgba(20, 184, 166, 0.14) 180deg,
+      rgba(20, 184, 166, 0.38) 252deg,
+      rgba(232, 246, 255, 0.16) 312deg,
+      rgba(20, 184, 166, 0.16) 360deg);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 2px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 2px));
+  box-shadow:
+    0 0 0 1px rgba(20, 184, 166, 0.18),
+    0 0 32px rgba(20, 184, 166, 0.18);
+  opacity: 0.96;
 }
 
 .skills-card-orbit::after {
-  inset: 3.5rem;
-  background:
-    radial-gradient(circle at center,
-      transparent calc(100% - 2px),
-      color-mix(in srgb, var(--accent) 52%, transparent) calc(100% - 1px),
-      transparent 100%),
-    conic-gradient(
-      from 0deg,
-      rgba(20, 184, 166, 0.18) 0deg 10deg,
-      transparent 10deg 44deg,
-      rgba(20, 184, 166, 0.14) 44deg 52deg,
-      transparent 52deg 108deg,
-      rgba(20, 184, 166, 0.16) 108deg 118deg,
-      transparent 118deg 172deg,
-      rgba(20, 184, 166, 0.18) 172deg 182deg,
-      transparent 182deg 236deg,
-      rgba(20, 184, 166, 0.16) 236deg 246deg,
-      transparent 246deg 298deg,
-      rgba(20, 184, 166, 0.18) 298deg 308deg,
-      transparent 308deg 360deg);
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
-  opacity: 0.75;
+  width: calc(var(--orbit-ring-size) + 3.25rem);
+  height: calc(var(--orbit-ring-size) + 3.25rem);
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  opacity: 0.24;
 }
 
 .skills-globe-halo {
@@ -561,51 +547,32 @@ main {
   scroll-margin-top: 120px;
 }
 
-.orbit-arm {
-  position: absolute;
-  left: calc((var(--globe-size) / 2) + 0.1rem);
-  top: 0;
-  width: calc(var(--radius) - (var(--globe-size) / 2) + 1.2rem);
-  height: 3px;
-  transform: translateY(-50%);
-  background: linear-gradient(90deg,
-      color-mix(in srgb, var(--accent) 26%, transparent) 0%,
-      color-mix(in srgb, var(--accent) 92%, transparent) 28%,
-      color-mix(in srgb, var(--accent) 78%, transparent) 78%,
-      color-mix(in srgb, var(--foreground) 18%, transparent) 100%);
-  box-shadow:
-    0 0 16px rgba(20, 184, 166, 0.24),
-    0 0 2px rgba(232, 246, 255, 0.35);
-  opacity: 0.88;
-  transform-origin: left center;
-  transition: opacity 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
-}
-
-.orbit-arm::before,
-.orbit-arm::after {
+.skills-orbit-node::before {
   content: '';
   position: absolute;
-  top: 50%;
-  width: 0.72rem;
-  height: 0.72rem;
+  left: calc(var(--orbit-radius) - 0.2rem);
+  top: 0;
+  width: 0.92rem;
+  height: 0.92rem;
   border-radius: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   background: color-mix(in srgb, var(--card) 88%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 70%, var(--border));
-  box-shadow: 0 0 16px rgba(20, 184, 166, 0.26);
+  border: 1px solid color-mix(in srgb, var(--accent) 74%, var(--border));
+  box-shadow:
+    0 0 18px rgba(20, 184, 166, 0.24),
+    0 0 3px rgba(232, 246, 255, 0.3);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
 }
 
-.orbit-arm::before {
-  left: -0.1rem;
-}
-
-.orbit-arm::after {
-  right: -0.1rem;
+.orbit-arm {
+  display: none;
 }
 
 .suspended-tech-card {
+  --orbit-card-shift: 0%;
+  --orbit-card-origin: left center;
   position: absolute;
-  left: calc(var(--radius) + 1.6rem);
+  left: calc(var(--orbit-radius) + 0.65rem);
   top: 0;
   width: var(--orbit-card-width);
   display: flex;
@@ -617,10 +584,37 @@ main {
   border: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
   box-shadow: 0 20px 42px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(18px);
-  transform: translate(-50%, -50%) rotate(calc(var(--angle) * -1));
+  transform: translate(var(--orbit-card-shift), -50%) rotate(calc(var(--angle) * -1));
+  transform-origin: var(--orbit-card-origin);
   animation: orbitCardCounter var(--orbit-duration) linear infinite;
-  animation-delay: var(--orbit-offset, 0s);
   transition: box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease, filter 0.28s ease;
+}
+
+.suspended-tech-card::before {
+  content: '';
+  position: absolute;
+  left: -0.8rem;
+  top: 50%;
+  width: 0.8rem;
+  height: 2px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg,
+      color-mix(in srgb, var(--accent) 82%, transparent),
+      color-mix(in srgb, var(--foreground) 16%, transparent));
+  box-shadow: 0 0 12px rgba(20, 184, 166, 0.22);
+}
+
+.skills-orbit-node.is-left .suspended-tech-card {
+  --orbit-card-shift: -100%;
+  --orbit-card-origin: right center;
+}
+
+.skills-orbit-node.is-left .suspended-tech-card::before {
+  left: auto;
+  right: -0.8rem;
+  background: linear-gradient(90deg,
+      color-mix(in srgb, var(--foreground) 16%, transparent),
+      color-mix(in srgb, var(--accent) 82%, transparent));
 }
 
 .tech-card-icon {
@@ -658,15 +652,9 @@ main {
   z-index: 5;
 }
 
-.skills-card-orbit:hover,
-.skills-card-orbit:hover .suspended-tech-card,
-.skills-orbit-node:target .suspended-tech-card {
-  animation-play-state: paused;
-}
-
-.skills-orbit-node:hover .orbit-arm,
-.skills-orbit-node:target .orbit-arm {
-  opacity: 1;
+.skills-orbit-node:hover::before,
+.skills-orbit-node:target::before {
+  transform: translate(-50%, -50%) scale(1.08);
   box-shadow:
     0 0 24px rgba(20, 184, 166, 0.34),
     0 0 4px rgba(232, 246, 255, 0.42);
@@ -679,6 +667,11 @@ main {
   background: color-mix(in srgb, var(--card) 92%, transparent);
   box-shadow: 0 28px 60px rgba(0, 0, 0, 0.3);
   filter: brightness(1.04);
+}
+
+.skills-orbit-node:hover .suspended-tech-card::before,
+.skills-orbit-node:target .suspended-tech-card::before {
+  box-shadow: 0 0 18px rgba(20, 184, 166, 0.3);
 }
 
 .skills-orbit-node:hover .tech-card-icon,
@@ -715,10 +708,10 @@ main {
 
 @keyframes orbitCardCounter {
   from {
-    transform: translate(-50%, -50%) rotate(calc(var(--angle) * -1));
+    transform: translate(var(--orbit-card-shift), -50%) rotate(calc(var(--angle) * -1));
   }
   to {
-    transform: translate(-50%, -50%) rotate(calc((var(--angle) * -1) - 1turn));
+    transform: translate(var(--orbit-card-shift), -50%) rotate(calc((var(--angle) * -1) - 1turn));
   }
 }
 
@@ -1410,20 +1403,29 @@ main {
   place-items: center;
   padding: 24px;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transition: opacity 0.22s ease;
 }
 
-.ux-lightbox:target {
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.ux-lightbox.is-open {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 
 .ux-lightbox-backdrop {
   position: absolute;
   inset: 0;
+  border: 0;
+  padding: 0;
   background: rgba(2, 6, 13, 0.82);
   backdrop-filter: blur(10px);
+  cursor: pointer;
 }
 
 .ux-lightbox-panel {
@@ -1439,22 +1441,6 @@ main {
   border-radius: calc(var(--radius) + 6px);
   background: color-mix(in srgb, var(--card) 94%, rgba(4, 10, 18, 0.96));
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
-}
-
-.ux-lightbox-close {
-  align-self: flex-end;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
-  background: color-mix(in srgb, var(--secondary) 75%, transparent);
-  color: var(--foreground);
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.ux-lightbox-close:hover {
-  border-color: color-mix(in srgb, var(--accent) 70%, transparent);
-  color: var(--accent);
 }
 
 .ux-lightbox-image {
@@ -2467,6 +2453,10 @@ textarea {
     transform: none;
   }
 
+  .skills-orbit-node::before {
+    display: none;
+  }
+
   .orbit-arm {
     display: none;
   }
@@ -2479,6 +2469,10 @@ textarea {
     min-height: 100%;
     transform: none;
     animation: none;
+  }
+
+  .suspended-tech-card::before {
+    display: none;
   }
 
   .skills-orbit-node:hover .suspended-tech-card,
