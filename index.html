@@ -877,43 +877,6 @@
     </footer>
 
   </div>
-  <script>
-    (() => {
-      const pageBody = document.body;
-      const lightboxes = Array.from(document.querySelectorAll('.ux-lightbox'));
-
-      const closeLightboxes = () => {
-        lightboxes.forEach((lightbox) => {
-          lightbox.classList.remove('is-open');
-          lightbox.setAttribute('aria-hidden', 'true');
-        });
-        pageBody.classList.remove('lightbox-open');
-      };
-
-      const openLightbox = (targetId) => {
-        const lightbox = document.getElementById(targetId);
-        if (!lightbox) return;
-        closeLightboxes();
-        lightbox.classList.add('is-open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        pageBody.classList.add('lightbox-open');
-      };
-
-      document.querySelectorAll('[data-lightbox-target]').forEach((trigger) => {
-        trigger.addEventListener('click', (event) => {
-          event.preventDefault();
-          openLightbox(trigger.dataset.lightboxTarget);
-        });
-      });
-
-      document.querySelectorAll('[data-lightbox-close]').forEach((control) => {
-        control.addEventListener('click', (event) => {
-          event.preventDefault();
-          closeLightboxes();
-        });
-      });
-    })();
-  </script>
 </body>
 
 </html>
