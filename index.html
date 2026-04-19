@@ -17,8 +17,7 @@
 </head>
 
 <body>
-  <!-- Pure-CSS theme and menu toggles -->
-  <input type="checkbox" id="theme-toggle" class="visually-hidden" aria-label="Toggle light mode">
+  <!-- Theme and menu toggles -->
   <div class="page">
     <!-- Icon symbol sprite (lucide-style outlines) -->
     <svg width="0" height="0" style="position:absolute">
@@ -149,14 +148,14 @@
           <a href="#contact">Contact</a>
         </nav>
         <div class="nav-actions">
-          <label for="theme-toggle" class="icon-button theme-toggle" aria-label="Toggle theme">
+          <button type="button" class="icon-button theme-toggle" aria-label="Toggle theme">
             <svg class="icon sun">
               <use href="#icon-sun"></use>
             </svg>
             <svg class="icon moon">
               <use href="#icon-moon"></use>
             </svg>
-          </label>
+          </button>
           <label for="menu-toggle" class="icon-button mobile-only menu-toggle" aria-label="Toggle menu">
             <svg class="icon menu">
               <use href="#icon-menu"></use>
@@ -253,71 +252,75 @@
           <div class="section-lead">
             <p class="eyebrow">About <span class="line"></span></p>
             <h2 class="section-title">Learning to Build Practical Products with Thoughtful UX</h2>
-            <p class="body-text">I am learning full-stack development and UI/UX by turning ideas into clean, practical, and user-focused digital products.</p>
+            <p class="body-text">I am learning full-stack development and UI/UX by turning ideas into clean, practical,
+              and user-focused digital products.</p>
             <div class="rule"></div>
           </div>
           <div class="grid two-columns about-grid">
             <div>
-            <p class="body-text">I am a Computer Science student and Aspiring full-stack developement.
-              currently learning to build responsive web apps
-              with a focus on clarity, performance, and maintainability. I enjoy exploring how product ideas can be turned into clean
-              interfaces while improving my coding and design skills.</p>
-            <p class="body-text">My current stack includes JavaScript, React, Node.js, and MongoDB, and 
-              I am expanding my skills through personal and academic projects. 
-              I am eager to contribute to projects and teams that value learning, growth, and user-centered design..</p>
-            <div class="card-grid">
-              <div class="card">
-                <h3 class="card-title">Frontend Learning</h3>
-                <p class="small-text">Practicing responsive interfaces and intuitive interaction patterns..</p>
-              </div>
-              <div class="card">
-                <h3 class="card-title">Backend Exploration</h3>
-                <p class="small-text">Building APIs and data layers while improving clarity, speed, and maintainability.</p>
+              <p class="body-text">I am a Computer Science student and Aspiring full-stack developement.
+                currently learning to build responsive web apps
+                with a focus on clarity, performance, and maintainability. I enjoy exploring how product ideas can be
+                turned into clean
+                interfaces while improving my coding and design skills.</p>
+              <p class="body-text">My current stack includes JavaScript, React, Node.js, and MongoDB, and
+                I am expanding my skills through personal and academic projects.
+                I am eager to contribute to projects and teams that value learning, growth, and user-centered design..
+              </p>
+              <div class="card-grid">
+                <div class="card">
+                  <h3 class="card-title">Frontend Learning</h3>
+                  <p class="small-text">Practicing responsive interfaces and intuitive interaction patterns..</p>
+                </div>
+                <div class="card">
+                  <h3 class="card-title">Backend Exploration</h3>
+                  <p class="small-text">Building APIs and data layers while improving clarity, speed, and
+                    maintainability.</p>
+                </div>
               </div>
             </div>
+            <aside class="profile-card">
+              <div class="profile-image-wrapper">
+                <span class="glow-ring"></span>
+                <img src="./public/profile.jpg" alt="Bati Jano profile image">
+              </div>
+
+              <h3 class="card-title">Bati Jano</h3>
+              <p class="small-text"> Aspiring on Fullstack development & UI/UX Design</p>
+
+              <p class="profile-bio">
+                Passionate about learning to build clean, responsive, and
+                user-focused web applications while improving my coding and design skills through projects.
+              </p>
+
+              <!-- Social Icons -->
+              <div class="profile-socials">
+                <a href="https://github.com/bati58" target="_blank">
+                  <svg>
+                    <use href="#icon-github"></use>
+                  </svg>
+                </a>
+                <a href="https://linkedin.com/in/bati-jano" target="_blank">
+                  <svg>
+                    <use href="#icon-linkedin"></use>
+                  </svg>
+                </a>
+                <a href="https://t.me/CMY_TR" target="_blank">
+                  <svg>
+                    <use href="#icon-send"></use>
+                  </svg>
+                </a>
+                <a href="mailto:batidev01@gmail.com">
+                  <svg>
+                    <use href="#icon-mail"></use>
+                  </svg>
+                </a>
+              </div>
+              <a href="./public/CV.pdf" download class="cv-button">
+                ⬇ Download CV
+              </a>
+            </aside>
           </div>
-          <aside class="profile-card">
-            <div class="profile-image-wrapper">
-              <span class="glow-ring"></span>
-              <img src="./public/profile.jpg" alt="Bati Jano profile image">
-            </div>
-
-            <h3 class="card-title">Bati Jano</h3>
-            <p class="small-text"> Aspiring on Fullstack development & UI/UX Design</p>
-
-            <p class="profile-bio">
-              Passionate about learning to build clean, responsive, and 
-              user-focused web applications while improving my coding and design skills through projects.
-            </p>
-
-            <!-- Social Icons -->
-            <div class="profile-socials">
-              <a href="https://github.com/bati58" target="_blank">
-                <svg>
-                  <use href="#icon-github"></use>
-                </svg>
-              </a>
-              <a href="https://linkedin.com/in/bati-jano" target="_blank">
-                <svg>
-                  <use href="#icon-linkedin"></use>
-                </svg>
-              </a>
-              <a href="https://t.me/CMY_TR" target="_blank">
-                <svg>
-                  <use href="#icon-send"></use>
-                </svg>
-              </a>
-              <a href="mailto:batidev01@gmail.com">
-                <svg>
-                  <use href="#icon-mail"></use>
-                </svg>
-              </a>
-            </div>
-            <a href="./public/CV.pdf" download class="cv-button">
-              ⬇ Download CV
-            </a>
-          </aside>
-        </div>
       </section>
 
       <section id="skills" class="section tech-apps">
@@ -325,7 +328,8 @@
           <div class="section-lead">
             <p class="eyebrow">Skills <span class="line"></span></p>
             <h2 class="section-title">Tech Stack Around My World</h2>
-            <p class="body-text skills-intro">Each tool here is attached to the same system: design, frontend craft, backend logic, and shipping work that feels polished.</p>
+            <p class="body-text skills-intro">Each tool here is attached to the same system: design, frontend craft,
+              backend logic, and shipping work that feels polished.</p>
             <div class="rule"></div>
           </div>
           <div class="skills-orbit-scene">
@@ -354,19 +358,34 @@
                     </radialGradient>
                     <g id="skills-globe-surface-panel">
                       <g class="globe-grid-group">
-                        <ellipse cx="160" cy="160" rx="114" ry="34" fill="none" stroke="rgba(232, 246, 255, 0.22)" stroke-width="1.4"></ellipse>
-                        <ellipse cx="160" cy="160" rx="114" ry="62" fill="none" stroke="rgba(232, 246, 255, 0.18)" stroke-width="1.4"></ellipse>
-                        <ellipse cx="160" cy="160" rx="114" ry="92" fill="none" stroke="rgba(232, 246, 255, 0.14)" stroke-width="1.4"></ellipse>
-                        <ellipse cx="160" cy="160" rx="34" ry="114" fill="none" stroke="rgba(232, 246, 255, 0.18)" stroke-width="1.4"></ellipse>
-                        <ellipse cx="160" cy="160" rx="66" ry="114" fill="none" stroke="rgba(232, 246, 255, 0.14)" stroke-width="1.4"></ellipse>
-                        <ellipse cx="160" cy="160" rx="92" ry="114" fill="none" stroke="rgba(232, 246, 255, 0.12)" stroke-width="1.4"></ellipse>
+                        <ellipse cx="160" cy="160" rx="114" ry="34" fill="none" stroke="rgba(232, 246, 255, 0.22)"
+                          stroke-width="1.4"></ellipse>
+                        <ellipse cx="160" cy="160" rx="114" ry="62" fill="none" stroke="rgba(232, 246, 255, 0.18)"
+                          stroke-width="1.4"></ellipse>
+                        <ellipse cx="160" cy="160" rx="114" ry="92" fill="none" stroke="rgba(232, 246, 255, 0.14)"
+                          stroke-width="1.4"></ellipse>
+                        <ellipse cx="160" cy="160" rx="34" ry="114" fill="none" stroke="rgba(232, 246, 255, 0.18)"
+                          stroke-width="1.4"></ellipse>
+                        <ellipse cx="160" cy="160" rx="66" ry="114" fill="none" stroke="rgba(232, 246, 255, 0.14)"
+                          stroke-width="1.4"></ellipse>
+                        <ellipse cx="160" cy="160" rx="92" ry="114" fill="none" stroke="rgba(232, 246, 255, 0.12)"
+                          stroke-width="1.4"></ellipse>
                       </g>
                       <g class="globe-map">
-                        <path fill="url(#skills-globe-land)" d="M71 113C59 98 70 72 102 74c17 1 33 13 37 30 4 19-8 28-17 39-7 9-9 19-8 32 0 15-10 27-24 29-15 3-30-8-33-22-2-9 2-18-2-26-5-10-16-22-10-38 3-8 8-14 16-19 13-8 24-7 41-5z"></path>
-                        <path fill="url(#skills-globe-land)" d="M166 82c18-11 41-9 55 4 13 11 18 28 11 39-5 8-14 12-20 19-10 11-9 27-17 39-10 16-30 25-48 20-18-5-26-22-22-39 3-12 12-22 10-35-2-13-8-29 6-40 7-6 15-5 25-7z"></path>
-                        <path fill="url(#skills-globe-land)" d="M214 92c24-11 55-4 70 15 11 14 10 34-3 44-11 8-26 7-39 10-12 3-22 10-33 10-12 0-25-9-28-22-3-16 10-26 18-37 7-10 2-16 15-20z"></path>
-                        <path fill="url(#skills-globe-land)" d="M233 196c14-6 31-3 39 8 7 9 5 23-5 31-12 10-31 9-43 0-9-7-12-18-6-28 3-6 8-8 15-11z"></path>
-                        <path fill="url(#skills-globe-land)" d="M129 220c8-4 18 0 22 8 4 9-1 19-10 23-8 4-18 1-23-6-6-8 0-20 11-25z"></path>
+                        <path fill="url(#skills-globe-land)"
+                          d="M71 113C59 98 70 72 102 74c17 1 33 13 37 30 4 19-8 28-17 39-7 9-9 19-8 32 0 15-10 27-24 29-15 3-30-8-33-22-2-9 2-18-2-26-5-10-16-22-10-38 3-8 8-14 16-19 13-8 24-7 41-5z">
+                        </path>
+                        <path fill="url(#skills-globe-land)"
+                          d="M166 82c18-11 41-9 55 4 13 11 18 28 11 39-5 8-14 12-20 19-10 11-9 27-17 39-10 16-30 25-48 20-18-5-26-22-22-39 3-12 12-22 10-35-2-13-8-29 6-40 7-6 15-5 25-7z">
+                        </path>
+                        <path fill="url(#skills-globe-land)"
+                          d="M214 92c24-11 55-4 70 15 11 14 10 34-3 44-11 8-26 7-39 10-12 3-22 10-33 10-12 0-25-9-28-22-3-16 10-26 18-37 7-10 2-16 15-20z">
+                        </path>
+                        <path fill="url(#skills-globe-land)"
+                          d="M233 196c14-6 31-3 39 8 7 9 5 23-5 31-12 10-31 9-43 0-9-7-12-18-6-28 3-6 8-8 15-11z">
+                        </path>
+                        <path fill="url(#skills-globe-land)"
+                          d="M129 220c8-4 18 0 22 8 4 9-1 19-10 23-8 4-18 1-23-6-6-8 0-20 11-25z"></path>
                       </g>
                       <g class="globe-clouds">
                         <ellipse cx="119" cy="110" rx="40" ry="15" fill="rgba(255,255,255,0.08)"></ellipse>
@@ -378,7 +397,8 @@
                   <circle cx="160" cy="160" r="132" fill="url(#skills-globe-ocean)"></circle>
                   <g clip-path="url(#skills-globe-clip)">
                     <g class="globe-surface-track">
-                      <animateTransform attributeName="transform" type="rotate" from="0 160 160" to="360 160 160" dur="22s" repeatCount="indefinite" calcMode="linear"></animateTransform>
+                      <animateTransform attributeName="transform" type="rotate" from="0 160 160" to="360 160 160"
+                        dur="22s" repeatCount="indefinite" calcMode="linear"></animateTransform>
                       <use href="#skills-globe-surface-panel"></use>
                     </g>
                     <ellipse cx="250" cy="160" rx="82" ry="132" fill="rgba(2, 10, 24, 0.18)"></ellipse>
@@ -398,7 +418,9 @@
               <div class="skills-orbit-node is-left" id="tech-html" style="--angle:-180deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt=""
+                      loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>HTML5</h3>
                     <p class="small-text">Semantic and accessible structure.</p>
@@ -408,7 +430,9 @@
               <div class="skills-orbit-node is-left" id="tech-css" style="--angle:-152.3deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt=""
+                      loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>CSS3</h3>
                     <p class="small-text">Layouts, motion, and visual systems.</p>
@@ -418,7 +442,9 @@
               <div class="skills-orbit-node is-left" id="tech-js" style="--angle:-124.6deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt=""
+                      loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>JavaScript</h3>
                     <p class="small-text">Interactive UI logic and data flow.</p>
@@ -428,7 +454,9 @@
               <div class="skills-orbit-node is-left" id="tech-ts" style="--angle:-96.9deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt=""
+                      loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>TypeScript</h3>
                     <p class="small-text">Type safety for confident refactors.</p>
@@ -438,7 +466,9 @@
               <div class="skills-orbit-node" id="tech-react" style="--angle:-69.2deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt=""
+                      loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>React</h3>
                     <p class="small-text">Component-driven interfaces at scale.</p>
@@ -448,7 +478,9 @@
               <div class="skills-orbit-node" id="tech-next" style="--angle:-41.5deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img class="invert-on-dark" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img class="invert-on-dark"
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt=""
+                      loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>Next.js</h3>
                     <p class="small-text">Production-ready React and routing.</p>
@@ -458,7 +490,9 @@
               <div class="skills-orbit-node" id="tech-tailwind" style="--angle:-13.8deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                      alt="" loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>Tailwind</h3>
                     <p class="small-text">Fast styling with design consistency.</p>
@@ -468,7 +502,9 @@
               <div class="skills-orbit-node" id="tech-node" style="--angle:13.8deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt=""
+                      loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>Node.js</h3>
                     <p class="small-text">APIs, tooling, and backend runtime.</p>
@@ -478,7 +514,9 @@
               <div class="skills-orbit-node" id="tech-python" style="--angle:41.5deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt=""
+                      loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>Python</h3>
                     <p class="small-text">Automation, scripting, and quick tools.</p>
@@ -488,7 +526,9 @@
               <div class="skills-orbit-node" id="tech-figma" style="--angle:69.2deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt=""
+                      loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>Figma</h3>
                     <p class="small-text">UI systems, flows, and prototyping.</p>
@@ -498,7 +538,9 @@
               <div class="skills-orbit-node is-left" id="tech-mongo" style="--angle:96.9deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt=""
+                      loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>MongoDB</h3>
                     <p class="small-text">Flexible document data for iteration.</p>
@@ -508,7 +550,9 @@
               <div class="skills-orbit-node is-left" id="tech-git" style="--angle:124.6deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt=""
+                      loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>Git</h3>
                     <p class="small-text">Version control and clean collaboration.</p>
@@ -518,7 +562,9 @@
               <div class="skills-orbit-node is-left" id="tech-vscode" style="--angle:152.3deg;">
                 <span class="orbit-arm" aria-hidden="true"></span>
                 <article class="tech-app-card suspended-tech-card">
-                  <span class="tech-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="" loading="lazy"></span>
+                  <span class="tech-card-icon"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt=""
+                      loading="lazy"></span>
                   <div class="tech-card-copy">
                     <h3>VS Code</h3>
                     <p class="small-text">A tuned workspace for fast delivery.</p>
@@ -639,14 +685,15 @@
           <div class="section-lead">
             <p class="eyebrow">UI/UX Gallery <span class="line"></span></p>
             <h2 class="section-title">Featured UI/UX Projects</h2>
-            <p class="body-text">UI/UX projects I am focusing on right now, from mobile appointment flows to trust-building User interfaces designed for real users.</p>
+            <p class="body-text">UI/UX projects I am focusing on right now, from mobile appointment flows to
+              trust-building User interfaces designed for real users.</p>
             <div class="rule"></div>
           </div>
           <div class="grid two-columns ux-gallery-grid">
             <article class="card ux-gallery-card">
               <a class="ux-gallery-preview ux-preview-image ux-gallery-trigger" href="#selam-design-preview"
-                data-lightbox-target="selam-design-preview" aria-controls="selam-design-preview"
-                aria-haspopup="dialog" aria-label="Open full image preview for Selam Beauty Salon">
+                data-lightbox-target="selam-design-preview" aria-controls="selam-design-preview" aria-haspopup="dialog"
+                aria-label="Open full image preview for Selam Beauty Salon">
                 <div class="ux-gallery-image-strip" aria-hidden="true">
                   <span class="ux-gallery-image-frame active">
                     <img class="ux-gallery-image portrait" src="./public/selam-beauty/cover.png" alt="">
@@ -662,7 +709,8 @@
               <div class="ux-gallery-copy">
                 <p class="small uppercase">Mobile Appointment App</p>
                 <h3 class="card-title">Selam Beauty Salon</h3>
-                <p class="small-text">A beauty salon mobile app focused on sign-in, service discovery, stylist selection, appointment booking, and simple profile management in a soft, client-friendly flow.</p>
+                <p class="small-text">A beauty salon mobile app focused on sign-in, service discovery, stylist
+                  selection, appointment booking, and simple profile management in a soft, client-friendly flow.</p>
                 <div class="ux-gallery-tags">
                   <span>Figma</span>
                   <span>Mobile UI</span>
@@ -670,20 +718,31 @@
                 </div>
                 <div class="ux-gallery-actions">
                   <a class="btn outline small" href="projects/selam-beauty.html">Learn more</a>
+                  <div class="link-row">
+                    <a href="https://www.figma.com/proto/5fjbbL4WlkSVPK80NESaGw/Selam-Beauty-Salon-%E2%80%93-Appointment-App?node-id=20-788&p=f&t=e4ALa6m5ujRWhRIY-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=20%3A788&show-proto-sidebar=1"
+                      class="btn btn-sm btn-brand" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="https://www.figma.com/design/5fjbbL4WlkSVPK80NESaGw/Selam-Beauty-Salon-%E2%80%93-Appointment-App?node-id=0-1&t=y9P4MYADRZo0nwgY-1"
+                      class="btn btn-sm btn-outline-brand" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-eye"></i> View Design</a>
+                    <a href="https://github.com/bati58/FUTURE_UX_02.git" class="btn btn-sm btn-outline-brand"
+                      target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                  </div>
                 </div>
               </div>
             </article>
             <article class="card ux-gallery-card">
               <a class="ux-gallery-preview ux-preview-image ux-gallery-trigger" href="#smile-design-preview"
-                data-lightbox-target="smile-design-preview" aria-controls="smile-design-preview"
-                aria-haspopup="dialog" aria-label="Open full image preview for Smile Speciality Dental Clinic">
+                data-lightbox-target="smile-design-preview" aria-controls="smile-design-preview" aria-haspopup="dialog"
+                aria-label="Open full image preview for Smile Speciality Dental Clinic">
                 <img class="ux-gallery-image" src="./public/smile-speciality/cover.png"
                   alt="Smile Speciality Dental Clinic homepage design">
               </a>
               <div class="ux-gallery-copy">
                 <p class="small uppercase">Clinic Interface Design</p>
                 <h3 class="card-title">Smile Speciality Dental Clinic</h3>
-                <p class="small-text">A modern dental clinic website UI focused on trust, service clarity, appointment booking, and informative pages that help patients navigate care with confidence.</p>
+                <p class="small-text">A modern dental clinic website UI focused on trust, service clarity, appointment
+                  booking, and informative pages that help patients navigate care with confidence.</p>
                 <div class="ux-gallery-tags">
                   <span>Figma</span>
                   <span>Healthcare UI</span>
@@ -691,6 +750,16 @@
                 </div>
                 <div class="ux-gallery-actions">
                   <a class="btn outline small" href="projects/smile-speciality.html">Learn more</a>
+                  <div class="link-row">
+                    <a href="https://www.figma.com/proto/0c3LIejO7HvxuwmDpNvWwL/smile-specility-dental-clinic?node-id=1-966&p=f&t=9qFvKFb1lOWrChKv-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A966"
+                      class="btn btn-sm btn-brand" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="https://www.figma.com/design/0c3LIejO7HvxuwmDpNvWwL/smile-specility-dental-clinic?node-id=0-1&t=9qFvKFb1lOWrChKv-1"
+                      class="btn btn-sm btn-outline-brand" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-eye"></i> View Design</a>
+                    <a href="https://github.com/bati58/FUTURE_UX_01.git" class="btn btn-sm btn-outline-brand"
+                      target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                  </div>
                 </div>
               </div>
             </article>
@@ -729,10 +798,11 @@
           <div class="section-lead">
             <p class="eyebrow">Services <span class="line"></span></p>
             <h2 class="section-title">Skills I am Learning and Building</h2>
-            <p class="body-text">A growing set of practical services I am developing through real projects, design studies, and hands-on implementation.</p>
+            <p class="body-text">A growing set of practical services I am developing through real projects, design
+              studies, and hands-on implementation.</p>
             <div class="rule"></div>
           </div>
-          <div class="grid three-columns">
+          <div class="grid three-columns services-grid">
             <div class="card service"><span class="icon-circle"><svg>
                   <use href="#icon-code"></use>
                 </svg></span>
@@ -761,7 +831,8 @@
             <div class="card service"><span class="icon-circle"><svg>
                   <use href="#icon-layout"></use>
                 </svg></span>
-              <p class="small-text strong">Learning UI/UX design by creating real project interfaces, wireframes, and user-focused experiences.</p>
+              <p class="small-text strong">Learning UI/UX design by creating real project interfaces, wireframes, and
+                user-focused experiences.</p>
             </div>
           </div>
         </div>
@@ -771,8 +842,10 @@
         <div class="container grid contact-grid">
           <div class="card contact-card">
             <div class="accent-bar"></div>
-            <h3 class="card-title">Open to internships, beginner projects, and collaborative learning opportunities.</h3>
-            <p class="small-text">I usually reply quickly. Feel free to share your project ideas, goals, and timelines—happy to contribute and learn along the way.</p>
+            <h3 class="card-title">Open to internships, beginner projects, and collaborative learning opportunities.
+            </h3>
+            <p class="small-text">I usually reply quickly. Feel free to share your project ideas, goals, and
+              timelines—happy to contribute and learn along the way.</p>
             <ul class="contact-list">
               <li><span class="icon-circle"><svg>
                     <use href="#icon-map"></use>
@@ -807,34 +880,24 @@
           </div>
           <div class="card contact-form">
             <div class="accent-bar"></div>
-            <form id="contact-form" action="https://formsubmit.co/batidev01@gmail.com" method="POST">
-              <input type="hidden" name="_subject" value="Portfolio contact">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="https://batijano.vercel.app/#form-sent">
-              <input type="text" name="_honey" style="display:none">
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="d68ecb1f-a8a0-483a-87ff-1288bc86a240">
               <div class="form-row">
                 <label>
                   <span>Your Name</span>
-                  <input type="text" name="name" required placeholder="Your Name" minlength="2" maxlength="60"
-                    autocomplete="name" inputmode="text" pattern="^[A-Za-z][A-Za-z '\\-]{0,58}[A-Za-z]$"
-                    title="Letters only; spaces, hyphens, apostrophes allowed.">
+                  <input type="text" name="name" required placeholder="Your Name" autocomplete="name">
                 </label>
                 <label>
                   <span>Your Email</span>
-                  <input type="email" name="email" required placeholder="Your Email">
+                  <input type="email" name="email" required placeholder="Your Email" autocomplete="email">
                 </label>
               </div>
               <label class="full">
                 <span>Message</span>
-                <textarea name="message" required rows="6" minlength="10"
-                  placeholder="Tell me about your project"></textarea>
+                <textarea name="message" required rows="6" placeholder="Tell me about your project"></textarea>
               </label>
-              <button type="submit" class="btn primary full">Send Message</button>
+              <button type="submit" class="btn primary full">Submit</button>
             </form>
-            <p class="form-status success" id="form-sent" aria-live="polite">
-              Message sent! I will get back to you soon.
-              <a class="form-status-close" href="#contact" aria-label="Dismiss message">×</a>
-            </p>
           </div>
         </div>
       </section>
@@ -877,6 +940,33 @@
     </footer>
 
   </div>
+  <script>
+    (() => {
+      const storageKey = 'portfolio-theme';
+      const body = document.body;
+      const toggleButtons = document.querySelectorAll('.theme-toggle');
+      const applyTheme = (theme) => {
+        const isLight = theme === 'light';
+        body.classList.toggle('light-theme', isLight);
+        toggleButtons.forEach((button) => {
+          button.setAttribute('aria-pressed', String(isLight));
+          button.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+          button.title = isLight ? 'Switch to dark mode' : 'Switch to light mode';
+        });
+      };
+
+      const savedTheme = localStorage.getItem(storageKey);
+      applyTheme(savedTheme === 'light' ? 'light' : 'dark');
+
+      toggleButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const nextTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
+          localStorage.setItem(storageKey, nextTheme);
+          applyTheme(nextTheme);
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

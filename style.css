@@ -68,7 +68,7 @@
   color-scheme: dark;
 }
 
-#theme-toggle:checked ~ .page {
+body.light-theme {
   --background: var(--background-light);
   --foreground: var(--foreground-light);
   --card: var(--card-light);
@@ -756,7 +756,7 @@ main {
   filter: invert(1) hue-rotate(180deg);
 }
 
-#theme-toggle:checked ~ .page .invert-on-dark {
+body.light-theme .invert-on-dark {
   filter: invert(0);
 }
 
@@ -851,11 +851,12 @@ main {
 .icon.close { display: none; }
 .icon.sun { display: none; }
 
-#theme-toggle:checked ~ .page .icon.sun { display: inline; }
-#theme-toggle:checked ~ .page .icon.moon { display: none; }
-#theme-toggle:not(:checked) ~ .page .icon.moon { display: inline; }
+body.light-theme .icon.sun { display: inline; }
+body.light-theme .icon.moon { display: none; }
+body:not(.light-theme) .icon.moon { display: inline; }
 
 .icon-button.theme-toggle {
+  appearance: none;
   color: var(--foreground);
   border-color: color-mix(in srgb, var(--border) 70%, transparent);
   background: color-mix(in srgb, var(--secondary) 75%, transparent);
@@ -962,6 +963,11 @@ main {
 
 .three-columns {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.services-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .four-columns {
@@ -1772,7 +1778,8 @@ body.lightbox-open {
 .service {
   display: flex;
   gap: 12px;
-  align-items: center;
+  align-items: flex-start;
+  min-height: 100%;
 }
 
 .icon-circle {
@@ -2560,6 +2567,7 @@ textarea {
 
   .card-grid,
   .three-columns,
+  .services-grid,
   .four-columns {
     grid-template-columns: 1fr;
   }
@@ -2579,6 +2587,12 @@ textarea {
   .skills-globe-anchor {
     width: min(100%, 15.5rem);
     height: min(100%, 15.5rem);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 980px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
