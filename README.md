@@ -33,8 +33,4 @@ npx serve .
 - Output directory: `.` (root)
 - Add domain under **Settings → Domains** and set as primary.
 
-## Updating Project Images
-- Hero/detail backgrounds: `public/<project>3.jpg`
-- Primary gallery image: `public/<project>.jpg`
-- Secondary gallery image: `public/<project>2.jpg`
-Replace with your screenshots and keep filenames consistent with the pages.
+
