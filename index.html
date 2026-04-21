@@ -18,6 +18,7 @@
 
 <body>
   <!-- Theme and menu toggles -->
+  <input type="checkbox" id="theme-toggle" class="visually-hidden" aria-label="Toggle theme">
   <div class="page">
     <!-- Icon symbol sprite (lucide-style outlines) -->
     <svg width="0" height="0" style="position:absolute">
@@ -148,14 +149,14 @@
           <a href="#contact">Contact</a>
         </nav>
         <div class="nav-actions">
-          <button type="button" class="icon-button theme-toggle" aria-label="Toggle theme">
+          <label for="theme-toggle" class="icon-button theme-toggle" aria-label="Toggle theme">
             <svg class="icon sun">
               <use href="#icon-sun"></use>
             </svg>
             <svg class="icon moon">
               <use href="#icon-moon"></use>
             </svg>
-          </button>
+          </label>
           <label for="menu-toggle" class="icon-button mobile-only menu-toggle" aria-label="Toggle menu">
             <svg class="icon menu">
               <use href="#icon-menu"></use>
@@ -810,33 +811,6 @@
     </footer>
 
   </div>
-  <script>
-    (() => {
-      const storageKey = 'portfolio-theme';
-      const body = document.body;
-      const toggleButtons = document.querySelectorAll('.theme-toggle');
-      const applyTheme = (theme) => {
-        const isLight = theme === 'light';
-        body.classList.toggle('light-theme', isLight);
-        toggleButtons.forEach((button) => {
-          button.setAttribute('aria-pressed', String(isLight));
-          button.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
-          button.title = isLight ? 'Switch to dark mode' : 'Switch to light mode';
-        });
-      };
-
-      const savedTheme = localStorage.getItem(storageKey);
-      applyTheme(savedTheme === 'light' ? 'light' : 'dark');
-
-      toggleButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const nextTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
-          localStorage.setItem(storageKey, nextTheme);
-          applyTheme(nextTheme);
-        });
-      });
-    })();
-  </script>
 </body>
 
 </html>
