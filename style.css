@@ -68,7 +68,7 @@
   color-scheme: dark;
 }
 
-#theme-toggle:checked ~ .page {
+.page:has(#theme-toggle:checked) {
   --background: var(--background-light);
   --foreground: var(--foreground-light);
   --card: var(--card-light);
@@ -420,7 +420,7 @@ main {
   filter: invert(1) hue-rotate(180deg);
 }
 
-#theme-toggle:checked ~ .page .invert-on-dark {
+.page:has(#theme-toggle:checked) .invert-on-dark {
   filter: invert(0);
 }
 
@@ -515,8 +515,8 @@ main {
 .icon.close { display: none; }
 .icon.sun { display: none; }
 
-#theme-toggle:checked ~ .page .theme-toggle .icon.sun { display: inline; }
-#theme-toggle:checked ~ .page .theme-toggle .icon.moon { display: none; }
+.page:has(#theme-toggle:checked) .theme-toggle .icon.sun { display: inline; }
+.page:has(#theme-toggle:checked) .theme-toggle .icon.moon { display: none; }
 .theme-toggle .icon.moon { display: inline; }
 
 .icon-button.theme-toggle {
