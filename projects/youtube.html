@@ -21,6 +21,7 @@
     </defs>
   </svg>
   <div class="page project-detail" style="--detail-bg: url('../public/youtube3.jpg');">
+    <input type="checkbox" id="theme-toggle" class="visually-hidden" aria-label="Toggle theme">
     <div class="dot-background" aria-hidden="true">
       <div class="dot-grid"></div>
       <div class="floating-dots">
@@ -44,10 +45,10 @@
     <header class="navbar">
       <div class="nav-inner">
         <a class="logo" href="../index.html"><span>&larr; Back</span></a>
-        <button type="button" class="icon-button theme-toggle" aria-label="Toggle theme">
+        <label for="theme-toggle" class="icon-button theme-toggle" aria-label="Toggle theme">
           <svg class="icon sun"><use href="#icon-sun"></use></svg>
           <svg class="icon moon"><use href="#icon-moon"></use></svg>
-        </button>
+        </label>
       </div>
     </header>
 
@@ -90,32 +91,5 @@
       </div>
     </main>
   </div>
-  <script>
-    (() => {
-      const storageKey = 'portfolio-theme';
-      const body = document.body;
-      const toggleButtons = document.querySelectorAll('.theme-toggle');
-      const applyTheme = (theme) => {
-        const isLight = theme === 'light';
-        body.classList.toggle('light-theme', isLight);
-        toggleButtons.forEach((button) => {
-          button.setAttribute('aria-pressed', String(isLight));
-          button.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
-          button.title = isLight ? 'Switch to dark mode' : 'Switch to light mode';
-        });
-      };
-
-      const savedTheme = localStorage.getItem(storageKey);
-      applyTheme(savedTheme === 'light' ? 'light' : 'dark');
-
-      toggleButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const nextTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
-          localStorage.setItem(storageKey, nextTheme);
-          applyTheme(nextTheme);
-        });
-      });
-    })();
-  </script>
 </body>
 </html>
