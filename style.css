@@ -68,7 +68,8 @@
   color-scheme: dark;
 }
 
-.page:has(#theme-toggle:checked) {
+.page:has(#theme-toggle:checked),
+body.light-theme .page {
   --background: var(--background-light);
   --foreground: var(--foreground-light);
   --card: var(--card-light);
@@ -420,7 +421,8 @@ main {
   filter: invert(1) hue-rotate(180deg);
 }
 
-.page:has(#theme-toggle:checked) .invert-on-dark {
+.page:has(#theme-toggle:checked) .invert-on-dark,
+body.light-theme .invert-on-dark {
   filter: invert(0);
 }
 
@@ -515,8 +517,10 @@ main {
 .icon.close { display: none; }
 .icon.sun { display: none; }
 
-.page:has(#theme-toggle:checked) .theme-toggle .icon.sun { display: inline; }
-.page:has(#theme-toggle:checked) .theme-toggle .icon.moon { display: none; }
+.page:has(#theme-toggle:checked) .theme-toggle .icon.sun,
+body.light-theme .theme-toggle .icon.sun { display: inline; }
+.page:has(#theme-toggle:checked) .theme-toggle .icon.moon,
+body.light-theme .theme-toggle .icon.moon { display: none; }
 .theme-toggle .icon.moon { display: inline; }
 
 .icon-button.theme-toggle {
@@ -1702,8 +1706,8 @@ textarea {
 
 .detail-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
   margin: 18px 0 24px;
   perspective: 1400px;
 }
@@ -1785,7 +1789,7 @@ textarea {
   width: 100%;
   display: block;
   object-fit: cover;
-  min-height: 180px;
+  min-height: 140px;
   aspect-ratio: 16 / 10;
   transform-origin: center;
   transition: transform 560ms cubic-bezier(0.22, 1, 0.36, 1), filter 420ms ease;
@@ -1907,9 +1911,9 @@ textarea {
 .dot-grid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, color-mix(in srgb, var(--foreground) 18%, transparent) 2px, transparent 2px);
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--foreground) 25%, transparent) 2.5px, transparent 2.5px);
   background-size: 32px 32px;
-  opacity: 0.6;
+  opacity: 0.85;
   transition: opacity 0.4s ease;
 }
 
@@ -1922,8 +1926,8 @@ textarea {
   position: absolute;
   left: calc(var(--x) * 1%);
   top: calc(var(--y) * 1%);
-  width: calc(var(--s) * 1px);
-  height: calc(var(--s) * 1px);
+  width: calc(var(--s) * 1.8px);
+  height: calc(var(--s) * 1.8px);
   background: color-mix(in srgb, var(--accent) 90%, transparent);
   border-radius: 999px;
   opacity: var(--o);
