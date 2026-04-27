@@ -844,13 +844,7 @@ main {
   font-size: 0.9rem;
 }
 
-.project .project-link {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-}
-
-.project .project-link {
+.project-link {
   display: inline-flex;
   width: fit-content;
   align-items: center;
@@ -860,8 +854,14 @@ main {
   color: var(--muted-foreground);
 }
 
-.project .project-link:hover {
+.project-link:hover {
   color: var(--foreground);
+}
+
+.project .project-link {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
 }
 
 .bullet-list {
@@ -1098,6 +1098,13 @@ main {
   margin-top: 1rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.ux-gallery-actions .link-row {
+  margin-left: auto;
 }
 
 .ux-gallery-actions .btn {
@@ -1671,9 +1678,27 @@ textarea {
 }
 
 .project-detail .button-row {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
+  gap: 14px;
   margin-top: 24px;
   margin-bottom: 0;
+  align-items: stretch;
+}
+
+.project-detail .button-row .btn {
+  min-width: 160px;
+  padding-inline: 20px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.project-detail .button-row .btn.outline {
+  background: color-mix(in srgb, var(--card) 76%, transparent);
+}
+
+.project-detail .button-row .btn:hover {
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
 }
 
 .detail-hero {
@@ -2156,6 +2181,15 @@ textarea {
 @media (max-width: 640px) {
   .headline {
     letter-spacing: -0.5px;
+  }
+
+  .ux-gallery-actions .link-row {
+    margin-left: 0;
+  }
+
+  .project-detail .button-row .btn {
+    width: 100%;
+    min-width: 0;
   }
 
   .button-row a {
