@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-Live:[Portfolio](https://batijano.vercel.app)
+Live:[view here](https://batijano.vercel.app)
 
 
 
